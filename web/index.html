@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17201c">
+<title>Government Dataset Explorer · CoolCode</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" type="module"></script>
+</head>
+<body>
+<a class="skip" href="#search">Skip to search</a>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="https://coolcode.ca/"><strong aria-hidden="true">&gt;_</strong>CoolCode.ca</a>
+<nav aria-label="Project navigation"><a href="#search">Search</a><a href="#source">Data and sources</a><a href="https://github.com/jsdyer/datasetexplorer">GitHub ↗</a></nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div><p class="eyebrow">Open data index · Canada</p><h1>Government Dataset Explorer<span>.</span></h1><p>Browse Canada’s Open Government Portal by dataset title, file name, format or publisher. Open a record to see its catalogue entry and download links.</p></div>
+  <div class="hero-stat"><strong id="total">—</strong><span>catalogue entries</span></div>
+</div></section>
+<div class="wrap workspace">
+  <section class="panel" id="search" aria-label="Search records">
+   <form id="search-form" role="search">
+    <label for="query">Search datasets and resource names</label>
+    <div class="query-row"><input type="search" id="query" placeholder="Try tide, groundwater, or sqlite" autocomplete="off" maxlength="240"><button type="button" id="clear" class="btn secondary">Clear</button></div>
+    <div class="chips" id="suggestions" aria-label="Example searches"><span>Try</span><button type="button" data-q="tide">tide</button><button type="button" data-q="groundwater">groundwater</button><button type="button" data-q="sqlite">sqlite</button><button type="button" data-q="railway">railway</button></div>
+    <div class="filters">
+      <label>Organization<select id="org"><option value="">All organizations</option></select></label>
+      <label>Year modified<select id="year"><option value="">All years</option></select></label>
+      <label>Resource format<select id="facet"><option value="">All formats</option></select></label>
+      <label>Sort by<select id="sort"><option value="relevance">Best match</option><option value="latest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
+    </div>
+   </form>
+  </section>
+  <div class="layout">
+    <section aria-labelledby="result-heading">
+      <div class="results-head"><div><h2 id="result-heading" tabindex="-1">Catalogue entries</h2><p id="count" class="stamp" role="status">Loading snapshot…</p></div><button id="surprise" class="btn secondary" disabled>Surprise me</button></div>
+      <div id="results"></div>
+      <div class="pagination" id="pages" hidden><button class="btn secondary" id="prev">Previous</button><span id="page" class="stamp"></span><button class="btn secondary" id="next">Next</button></div>
+    </section>
+    <aside>
+      <section class="panel"><p class="eyebrow">File types</p><h2>Common formats</h2><div id="summary"></div><p>Choose a format to narrow the catalogue. Counts are per entry, so a dataset can count toward multiple formats.</p></section>
+      <section class="panel" id="source"><p class="eyebrow">Provenance</p><h2>About this snapshot</h2>
+        <p id="snapshot" class="stamp">Publisher and build dates load with the data.</p><p>Search covers bilingual titles, keywords, publisher, file names and resource labels. Resource links and individual licences are listed as published.</p>
+        <a href="https://open.canada.ca/data/en/dataset/c4c5c7f1-bfa6-4ff6-b4a0-c164cb2060f7">Government source ↗</a><a href="https://open.canada.ca/static/od-do-canada.jsonl.gz">Download catalogue (JSONL gzip) ↗</a><a href="https://open.canada.ca/data/dataset/c4c5c7f1-bfa6-4ff6-b4a0-c164cb2060f7/resource/b7f0c11e-e81f-46e7-958d-0bbf878a3df6/download/sqlite.db">Download catalogue (SQLite) ↗</a><a href="https://coolcode.ca/opendatagraveyard/">Browse removed catalogue entries ↗</a>
+      </section>
+    </aside>
+  </div>
+</div>
+</main>
+<footer><div class="wrap stamp">Source: Treasury Board of Canada Secretariat. Contains information licensed under the <a href="https://open.canada.ca/en/open-government-licence-canada">Open Government Licence – Canada</a>. An independent CoolCode project.</div></footer>
+<dialog id="detail" aria-labelledby="detail-title">
+<div class="dialog-head"><div><p class="eyebrow">Catalogue record</p><h2 id="detail-title"></h2></div><form method="dialog"><button class="btn secondary">Close</button></form></div>
+<div class="dialog-body" id="detail-body"></div>
+</dialog>
+</body>
+</html>
