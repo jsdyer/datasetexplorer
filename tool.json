@@ -1,0 +1,22 @@
+{
+  "id": "datasetexplorer",
+  "title": "The Government Dataset Explorer",
+  "description": "Find federal datasets and their downloadable files.",
+  "category": "explorers",
+  "tags": [
+    "catalogue",
+    "csv",
+    "api",
+    "government"
+  ],
+  "icon": "database",
+  "url": "/datasetexplorer/",
+  "source": "https://github.com/jsdyer/datasetexplorer",
+  "hosting": "project",
+  "access": "browser",
+  "data_info": {
+    "mode": "snapshot",
+    "detail": "Canada’s Open Government Portal lists each dataset’s publisher and available file formats.",
+    "cadence": "Daily"
+  }
+}
