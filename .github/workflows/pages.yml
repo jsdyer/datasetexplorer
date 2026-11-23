@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'web/**'
+      - 'tests/**'
       - 'scripts/**'
       - 'requirements.txt'
       - '.github/workflows/pages.yml'
@@ -37,6 +38,8 @@ jobs:
           fi
           python3 scripts/build.py
           test -s dist/index.html
+      - name: Test application logic
+        run: node --test tests/*.test.mjs
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist

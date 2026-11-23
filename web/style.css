@@ -92,3 +92,4 @@ dialog::backdrop {background:#0c160db0}
   .btn {padding:.35rem .45rem}
   .results-head {align-items:start}
 }
+.resource-preview{overflow:auto;max-height:28rem;margin:1rem 0}.resource-preview table{border-collapse:collapse;min-width:100%;font-size:.9rem}.resource-preview td,.resource-preview th{padding:.5rem;border:1px solid #cdd3cd;min-width:7rem;max-width:24rem;overflow-wrap:anywhere;vertical-align:top}.resource-preview th{position:sticky;top:0;background:#edf2e9}#live,#preview{margin-block:1.25rem}#live-results{margin-top:1rem}

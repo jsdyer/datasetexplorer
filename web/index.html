@@ -7,6 +7,7 @@
 <title>Government Dataset Explorer · CoolCode</title>
 <link rel="stylesheet" href="./style.css">
 <script src="./app.js" type="module"></script>
+<script src="./live.mjs" type="module"></script>
 <script defer src="/assets/tool-metrics.js" referrerpolicy="no-referrer"></script>
 </head>
 <body>
@@ -34,6 +35,8 @@
     </div>
    </form>
   </section>
+  <section class="panel" id="live"><h2>Search the live federal CKAN catalogue</h2><p>Check newly published records against the current API. The main search above uses the downloaded snapshot. Preview buttons send a request to the selected resource publisher.</p><form id="live-form"><label for="live-query">Current catalogue search</label><div class="query-row"><input id="live-query" type="search" maxlength="240" placeholder="e.g. groundwater" required><button class="btn" type="submit">Search live catalogue</button></div></form><p id="live-status" role="status"></p><div id="live-results"></div><div class="pagination"><button class="btn secondary" id="live-prev" disabled>Previous live results</button><button class="btn secondary" id="live-next" disabled>Next live results</button></div></section>
+  <section class="panel" id="preview"><h2>Preview a CSV or JSON file</h2><p>Select a downloaded file under 2 MB. Its contents stay on your device. The preview shows at most 50 rows and 30 columns.</p><label for="preview-file">Local CSV or JSON file</label><input id="preview-file" type="file" accept=".csv,.json,text/csv,application/json"><div id="local-preview" role="status"></div></section>
   <div class="layout">
     <section aria-labelledby="result-heading">
       <div class="results-head"><div><h2 id="result-heading" tabindex="-1">Catalogue entries</h2><p id="count" class="stamp" role="status">Loading snapshot…</p></div><button id="surprise" class="btn secondary" disabled>Surprise me</button></div>

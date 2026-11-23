@@ -1,3 +1,4 @@
+import {resourcePreview} from './preview.mjs';
 const $ = id => document.getElementById(id);
 const month = new Intl.DateTimeFormat("en-CA", { month:"long",timeZone:"UTC" });
 const dateLabel = new Intl.DateTimeFormat("en-CA", { year:"numeric",month:"short",day:"numeric",timeZone:"UTC" });
@@ -237,6 +238,7 @@ async function openDetail(row) {
       const item = node("li");
       append(item,link(`${name} ↗`,url) || node("span",name));
       item.append(node("span",[format,filename].filter(Boolean).join(" · "),"stamp"));
+      if (/csv|json/i.test(format) && url) item.append(resourcePreview(name,url,format));
       list.append(item);
     }
     body.append(list);
