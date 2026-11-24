@@ -26,3 +26,11 @@ Search the downloaded federal catalogue, or use Live catalogue search for a curr
 ## Added browser workflow
 
 Search the downloaded federal catalogue, or use Live catalogue search for a current CKAN query. Preview CSV and JSON resources up to 2 MB when the publisher allows browser access. You can also open a local CSV or JSON extract without uploading it; previews show up to 50 rows and 30 columns.
+
+<!-- schedule-reliability -->
+## Schedule reliability
+
+Public GitHub repositories can have scheduled workflows disabled after 60 days of inactivity. A separate weekly [schedule guard](.github/workflows/schedule-guard.yml) calls GitHub's enable-workflow API for an explicit list of refresh workflows and itself. It can restore workflows disabled for inactivity, preserves manually disabled workflows, and runs independently of collection failures.
+
+This is an interim mitigation, not a scheduling guarantee: GitHub does not document active-workflow renewal as a permanent exemption, and scheduled runs can be delayed or dropped. A scheduler on our own Linux server is the planned independent trigger. The guard does not collect data, create dummy commits, or change source/check timestamps; successful collection and published data freshness still need monitoring.
+<!-- /schedule-reliability -->
