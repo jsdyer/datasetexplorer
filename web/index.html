@@ -1,16 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#17201c">
-<title>Government Dataset Explorer · CoolCode</title>
+<title>Canadian Open Dataset Search · CoolCode</title>
+<meta name="description" content="Search Canada’s Open Government Portal by dataset title, file name, publisher or format. Find download links and preview supported CSV and JSON resources.">
+<link rel="canonical" href="https://coolcode.ca/datasetexplorer/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://coolcode.ca/datasetexplorer/">
+<meta property="og:title" content="Canadian Open Dataset Search · CoolCode">
+<meta property="og:description" content="Search Canada’s Open Government Portal by dataset title, file name, publisher or format. Find download links and preview supported CSV and JSON resources.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","@id":"https://coolcode.ca/datasetexplorer/#application","url":"https://coolcode.ca/datasetexplorer/","name":"Canadian Open Dataset Search","alternateName":"Government Dataset Explorer","description":"Search Canada’s Open Government Portal by dataset title, file name, publisher or format. Find download links and preview supported CSV and JSON resources.","applicationCategory":"ReferenceApplication","operatingSystem":"Any with a modern browser","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"}}</script>
 <link rel="stylesheet" href="./style.css">
 <script src="./app.js" type="module"></script>
 <script src="./live.mjs" type="module"></script>
 <script defer src="/assets/tool-metrics.js" referrerpolicy="no-referrer"></script>
 </head>
-<body>
+<body data-tool-id="datasetexplorer">
 <a class="skip" href="#search">Skip to search</a>
 <header class="topbar"><div class="wrap">
 <a class="brand" href="https://coolcode.ca/"><strong aria-hidden="true">&gt;_</strong>CoolCode.ca</a>
@@ -18,7 +25,7 @@
 </div></header>
 <main>
 <section class="hero"><div class="wrap">
-  <div><p class="eyebrow">Open data index · Canada</p><h1>Government Dataset Explorer<span>.</span></h1><p>Browse Canada’s Open Government Portal by dataset title, file name, format or publisher. Open a record to see its catalogue entry and download links.</p></div>
+  <div><p class="eyebrow">Government Dataset Explorer</p><h1>Canadian Open Dataset Search<span>.</span></h1><p>Search the federal catalogue in English or French. Try the groundwater example below, then open a result to find its published files.</p></div>
   <div class="hero-stat"><strong id="total">—</strong><span>catalogue entries</span></div>
 </div></section>
 <div class="wrap workspace">
